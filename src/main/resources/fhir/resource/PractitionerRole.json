@@ -1,0 +1,36 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "krcore-practitioner-example-01",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/myhw/StructureDefinition/PractitionerRole"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>KR Core Practitioner Profile Example</p>\n    </div>"
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.3.4.5.6",
+      "value": "MD1234456"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/practitioner-example-01"
+  },
+  "organization": {
+    "reference": "Organization/organization-example-01"
+  },
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "https://hira.or.kr/CodeSystem/medical-subject",
+          "code": "24",
+          "display": "응급의학과"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "resourceType": "Patient",
+  "id": "krcore-patient-example-01",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/myhw/StructureDefinition/Patient"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>KR Core Patient Profile Example</p>\n    </div>"
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          }
+        ]
+      },
+      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+      "value": "MR12345"
+    }
+  ],
+  "name": [
+    {
+      "text": "김환자"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "010-1234-5678"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "2001-01-01",
+  "address": [
+    {
+      "extension": [
+        {
+          "url": "https://simplifier.net/myhw/StructureDefinition/RoadNameAddress",
+          "extension": [
+            {
+              "url": "district",
+              "valueString": "서울특별시 강남구"
+            },
+            {
+              "url": "roadName",
+              "valueString": "일원로"
+            },
+            {
+              "url": "detailedAddress",
+              "valueString": "81"
+            },
+            {
+              "url": "complements",
+              "valueString": "일원동"
+            }
+          ]
+        }
+      ],
+      "text": "서울특별시 강남구 일원로 81 (일원동)",
+      "postalCode": "06351"
+    }
+  ],
+  "managingOrganization": {
+    "reference": "Organization/organization-example-01"
+  }
+}

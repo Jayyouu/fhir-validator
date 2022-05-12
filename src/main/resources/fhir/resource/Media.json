@@ -1,0 +1,47 @@
+{
+  "resourceType" : "Media",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/myhw/StructureDefinition/Media"
+    ]
+  },
+  "status" : "completed",
+  "deviceName" : "Radiology System",
+  "started" : "2021-12-30",
+  "type" : {
+    "coding" : [
+      {
+        "system" : "http://terminology.hl7.org/CodeSystem/media-type",
+        "code" : "image",
+        "display" : "Image"
+      }
+    ]
+  },
+  "modality" : {
+    "coding" : [
+      {
+        "system" : "http://dicom.nema.org/resources/ontology/DCM",
+        "code" : "DX",
+        "display" : "Digital Radiography"
+      },
+    ],
+    "text" : "Digital Radiography"
+  },
+  "subject" : {
+    "reference" : "Patient/patient-example-01"
+  },
+  "createdDateTime": "2022-05-11",
+  "bodySite" : {
+    "coding" : [
+      {
+        "system" : "http://snomed.info/sct",
+        "code" : "T-15460",
+        "display" : "Wrist Joint"
+      }
+    ],
+    "text" : "Wrist Joint"
+  },
+  "content" : {
+    "data" : "100110 111010 001011 101001 100110 111010"
+  }
+}

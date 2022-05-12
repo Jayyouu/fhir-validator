@@ -1,0 +1,66 @@
+{
+  "resourceType": "Organization",
+  "id": "krcore-organization-example-01",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/myhw/StructureDefinition/Organization"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">KR Core Organization Profile Example</div>"
+  },
+  "identifier": [
+    {
+      "system": "https://hira.or.kr/knpi",
+      "value": "11100000"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "https://hira.or.kr/CodeSystem/organization-type",
+          "code": "01",
+          "display": "상급종합병원"
+        }
+      ]
+    }
+  ],
+  "name": "한국병원",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "02-1237-4567"
+    }
+  ],
+  "address": [
+    {
+      "extension": [
+        {
+          "url": "https://simplifier.net/myhw/StructureDefinition/RoadNameAddress",
+          "extension": [
+            {
+              "url": "district",
+              "valueString": "서울특별시 중구"
+            },
+            {
+              "url": "roadName",
+              "valueString": "덕수궁길"
+            },
+            {
+              "url": "detailedAddress",
+              "valueString": "15"
+            },
+            {
+              "url": "complements",
+              "valueString": "서소문동"
+            }
+          ]
+        }
+      ],
+      "text": "서울특별시 중구 서소문동 37",
+      "postalCode": "04515"
+    }
+  ]
+}

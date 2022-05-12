@@ -1,0 +1,30 @@
+{
+  "resourceType" : "ImagingStudy",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/myhw/StructureDefinition/ImagingStudy"
+    ]
+  },
+  "status" : "available",
+  "subject" : {
+    "reference" : "Patient/patient-example-01"
+  },
+  "started" : "2021-12-30",
+  "series" : [
+    {
+      "uid": "uniqueId01",
+      "modality" : {
+        "system" : "http://dicom.nema.org/resources/ontology/DCM",
+        "code" : "DX",
+
+        "display" : "Digital Radiography"
+      },
+      "description" : "XR Wrist 3+ Views",
+      "bodySite" : {
+        "system" : "http://snomed.info/sct",
+        "code" : "T-15460",
+        "display" : "Wrist Joint"
+      }
+    }
+  ]
+}

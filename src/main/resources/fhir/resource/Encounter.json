@@ -1,0 +1,35 @@
+{
+  "resourceType" : "Encounter",
+  "id" : "krcore-encounter-example-01",
+  "meta" : {
+    "profile" : [
+      "https://simplifier.net/myhw/StructureDefinition/Encounter"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: 142341234</p><p><b>status</b>: finished</p><p><b>class</b>: <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">ambulatory</span></p><p><b>subject</b>: <a href=\"Patient-krcore-patient-example-01.html\">Generated Summary: Medical record number: MR12345; 김환자; Phone: 010-1234-5678; gender: male; birthDate: 2001-01-01</a></p><h3>Participants</h3><table class=\"grid\"><tr><td>-</td><td><b>Individual</b></td></tr><tr><td>*</td><td><a href=\"PractitionerRole-krcore-practitionerrole-example-01.html\">Generated Summary: id: MD12345; <span title=\"Codes: {http://snomed.info/sct 309294001}\">Accident and Emergency doctor</span>; <span title=\"Codes: {https://hira.or.kr/CodeSystem/medical-subject 24}\">응급의학과</span>; Phone: 02-5678-9012</a></td></tr></table><p><b>period</b>: 2021-08-01 --&gt; (ongoing)</p><p><b>serviceProvider</b>: <a href=\"Organization-krcore-organization-example-01.html\">KR Core Organization Profile ExampleGenerated Summary: id: 11100000; <span title=\"Codes: {https://hira.or.kr/CodeSystem/organization-type 01}\">상급종합병원</span>; name: 한국병원; </a></p></div>"
+  },
+  "status" : "finished",
+  "class" : {
+    "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code" : "AMB"
+  },
+  "subject" : {
+    "reference" : "Patient/krcore-patient-example-01"
+  },
+  "participant" : [
+    {
+      "individual" : {
+        "reference" : "PractitionerRole/krcore-practitionerrole-example-01"
+      }
+    }
+  ],
+  "period" : {
+    "start" : "2021-08-01",
+    "end": "2022-01-01"
+  },
+  "serviceProvider" : {
+    "reference" : "Organization/krcore-organization-example-01"
+  }
+}

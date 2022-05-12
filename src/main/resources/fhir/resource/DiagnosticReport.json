@@ -1,0 +1,43 @@
+{
+  "resourceType": "DiagnosticReport",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/myhw/StructureDefinition/DiagnosticReport"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "4201000179104"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "https://hira.or.kr/CodeSystem/procedure-and-result",
+        "code": "HI101",
+        "display": "자기공명영상진단-기본검사-뇌-일반-촬영료 등"
+      }
+    ],
+    "text": "자기공명영상진단-기본검사-뇌-일반-촬영"
+  },
+  "subject": {
+    "reference": "Patient/patient-example-01"
+  },
+  "effectiveDateTime": "2021-12-24",
+  "resultInterpreter": {
+    "reference": "PractitionerRole/practitionerrole-example-01"
+  },
+  "imagingStudy": {
+    "reference": "imagingStudy/imagingStudy-example-01"
+  },
+  "media": {
+    "link": "Media/media-01"
+  },
+  "conclusion": "자기공명영상진단-기본검사-뇌-일반-촬영 소견"
+}

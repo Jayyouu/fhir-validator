@@ -1,0 +1,34 @@
+{
+  "resourceType": "Procedure",
+  "id": "krcore-procedure-example-01",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/myhw/StructureDefinition/Procedure"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Medication Request</div>"
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "https://hira.or.kr/CodeSystem/procedure-code",
+        "code": "R4421"
+      }
+    ],
+    "text": "각막절제술"
+  },
+  "subject": {
+    "reference": "Patient/patient-example-01"
+  },
+  "performedDateTime": "2021-12-24",
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/practitionerrole-example-01"
+      }
+    }
+  ]
+}

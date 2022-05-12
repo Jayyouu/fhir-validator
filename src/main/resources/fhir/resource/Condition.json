@@ -1,0 +1,50 @@
+{
+  "resourceType": "Condition",
+  "id": "krcore-condition-example-01",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/myhw/StructureDefinition/Condition"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> Benign Hypertension (2021년 6월 10일)</div>"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "urn:oid:1.2.410.100110.400.10",
+        "code": "I10",
+        "display": "Benign Hypertension"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/krcore-patient-example-01"
+  },
+  "encounter": {
+    "reference": "Encounter/krcore-encounter-example-01"
+  },
+  "recordedDate": "2021-06-10",
+  "recorder": {
+    "reference": "PractitionerRole/practitionerrole-example-01"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "krcore-medicationrequest-example-01",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/myhw/StructureDefinition/MedicationRequest"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Medication Request</div>"
+  },
+  "status": "completed",
+  "intent": "order",
+  "reportedBoolean" : false,
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system" : "https://biz.kpis.or.kr/CodeSystem/kdcode",
+        "code" : "200308509",
+        "display" : "데코데인정"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/krcore-patient-example-01"
+  },
+  "authoredOn": "2021-01-01",
+  "requester": {
+    "reference": "Practitioner/krcore-practitioner-example-01"
+  },
+  "dosageInstruction": [
+    {
+      "text": "하루 1번 2TAB",
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 2,
+            "unit": "TAB"
+          }
+        }
+      ]
+    }
+  ]
+}

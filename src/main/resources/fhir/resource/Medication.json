@@ -1,0 +1,41 @@
+
+{
+  "resourceType" : "Medication",
+  "id" : "krcore-medication-example-01",
+  "meta" : {
+    "profile" : [
+      "https://example.org/fhir/krcore/StructureDefinition/krcore-medication"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Trolac 30mg inj (KetoROLAC)</div>"
+  },
+  "code" : {
+    "coding" : [
+      {
+        "system" : "https://biz.kpis.or.kr/CodeSystem/kdcode",
+        "code" : "657200821",
+        "display" : "트롤락주(케토롤락트로메타민)"
+      },
+      {
+        "system" : "http://www.whocc.no/atc",
+        "code" : "M01AB15",
+        "display" : "KETOROLAC"
+      }
+    ]
+  },
+  "ingredient" : [
+    {
+      "itemCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "https://hira.or.kr/CodeSystem/medication-ingredient-code",
+            "code" : "180033BIJ",
+            "display" : "ketorolac tromethamine"
+          }
+        ]
+      }
+    }
+  ]
+}
