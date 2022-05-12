@@ -1,0 +1,72 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "list-example-use-codes",
+  "meta": {
+    "lastUpdated": "2020-04-09T15:10:28.568-06:00",
+    "profile": [
+      "https://simplifier.net/myhw/StructureDefinition/TestKCD8CodeSystem"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system http://terminology.hl7.org/CodeSystem/list-example-use-codes defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">alerts<a name=\"list-example-use-codes-alerts\"> </a></td><td>Alerts</td><td>A list of alerts for the patient.</td></tr><tr><td style=\"white-space:nowrap\">adverserxns<a name=\"list-example-use-codes-adverserxns\"> </a></td><td>Adverse Reactions</td><td>A list of part adverse reactions.</td></tr><tr><td style=\"white-space:nowrap\">allergies<a name=\"list-example-use-codes-allergies\"> </a></td><td>Allergies</td><td>A list of Allergies for the patient.</td></tr><tr><td style=\"white-space:nowrap\">medications<a name=\"list-example-use-codes-medications\"> </a></td><td>Medication List</td><td>A list of medication statements for the patient.</td></tr><tr><td style=\"white-space:nowrap\">problems<a name=\"list-example-use-codes-problems\"> </a></td><td>Problem List</td><td>A list of problems that the patient is known of have (or have had in the past).</td></tr><tr><td style=\"white-space:nowrap\">worklist<a name=\"list-example-use-codes-worklist\"> </a></td><td>Worklist</td><td>A list of items that constitute a set of work to be performed (typically this code would be specialized for more specific uses, such as a ward round list).</td></tr><tr><td style=\"white-space:nowrap\">waiting<a name=\"list-example-use-codes-waiting\"> </a></td><td>Waiting List</td><td>A list of items waiting for an event (perhaps a surgical patient waiting list).</td></tr><tr><td style=\"white-space:nowrap\">protocols<a name=\"list-example-use-codes-protocols\"> </a></td><td>Protocols</td><td>A set of protocols to be followed.</td></tr><tr><td style=\"white-space:nowrap\">plans<a name=\"list-example-use-codes-plans\"> </a></td><td>Care Plans</td><td>A set of care plans that apply in a particular context of care.</td></tr></table></div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "draft"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 1
+    }
+  ],
+  "url": "https://simplifier.net/myhw/StructureDefinition/TestKCD8CodeSystem",
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.410.100110.400.10",
+      "value": "urn:oid:1.2.410.100110.400.10"
+    }
+  ],
+  "version": "0.1.0",
+  "name": "TestKCD8CodeSystem",
+  "title": "Example Use Codes for List",
+  "status": "draft",
+  "experimental": false,
+  "date": "2022-05-12T20:09:18-07:00",
+  "publisher": "FHIR Project",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "010-8367-6114"
+        }
+      ]
+    }
+  ],
+  "description": "Example use codes for the List resource - typical kinds of use.",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "I10",
+      "display": "Benign Hypertension",
+      "definition": "Benign Hypertension"
+    },
+    {
+      "code": "I11",
+      "display": "Temp KCD Code 01",
+      "definition": "Temp KCD Code 01"
+    },
+    {
+      "code": "I12",
+      "display": "Temp KCD Code 02",
+      "definition": "Temp KCD Code 02"
+    }
+  ]
+}

@@ -16,7 +16,7 @@ public class NpmValidator {
         FhirContext fhirContext = FhirContext.forR4();
 
         NpmPackageValidationSupport npmPackageSupport = new NpmPackageValidationSupport(fhirContext);
-        npmPackageSupport.loadPackageFromClasspath("classpath:fhir/package/iteyes.myhw.core-1.0.4-beta.tgz");
+        npmPackageSupport.loadPackageFromClasspath("classpath:fhir/package/iteyes.myhw.core-1.0.5-beta.tgz");
 
         ValidationSupportChain validationSupportChain = new ValidationSupportChain(
                 npmPackageSupport,
