@@ -1,0 +1,54 @@
+{
+  "resourceType": "Observation",
+  "meta" : {
+    "profile" : [
+      "https://simplifier.net/myhw/StructureDefinition/ObservationFunc"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/Codesystem/observation-category",
+          "code": "exam"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "https://hira.or.kr/CodeSystem/result-code",
+        "code": "F6900",
+        "display": "기초대사측정"
+      }
+    ],
+    "text": ""
+  },
+  "subject": {
+    "reference": "Patient/patient-example-01"
+  },
+  "effectiveDateTime": "2021-12-24",
+  "performer": {
+    "reference": "PractitionerRole/practitionerRole-example-01"
+  },
+  "valueQuantity": {
+    "value": 1300,
+    "unit": "kcal",
+    "system": "http://unitsofmeasure.org",
+    "code": "kcal"
+  },
+  "referenceRange": [
+    {
+      "low": {
+        "value": 1200,
+        "unit": "kcal"
+      },
+      "high": {
+        "value": 1500,
+        "unit": "kcal"
+      }
+    }
+  ]
+}

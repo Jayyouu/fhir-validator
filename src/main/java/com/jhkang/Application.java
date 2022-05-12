@@ -9,20 +9,21 @@ public class Application {
     // FIXME
     public static void main(String[] args) throws Exception {
 
-        String filePath = Application.class.getClassLoader().getResource("fhir/resource/Organization.json").getPath();
-
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\Organization.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\Practitioner.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\PractitionerRole.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\Encounter.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\Condition.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\MedicationRequest.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\DiagnosticReport.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\ImagingStudy.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\Media.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\Procedure.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\AllergyIntolerance.json");
-        //        Reader reader = new FileReader("C:\\Users\\jhkan\\IdeaProjects\\validator\\src\\main\\resources\\fhir\\resource\\DocumentReference.json");
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/Organization.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/Practitioner.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/PractitionerRole.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/Encounter.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/Condition.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/Organization.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/Organization.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/ObservationLabResult.json").getPath();
+        String filePath = Application.class.getClassLoader().getResource("fhir/resource/ObservationFuncResult.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/Organization.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/ImagingStudy.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/Media.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/Procedure.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/AllergyIntolerance.json").getPath();
+//        String filePath = Application.class.getClassLoader().getResource("fhir/resource/DocumentReference.json").getPath();
 
         NpmValidator validator = new NpmValidator();
         JsonObject jsonObject = JsonUtil.readFileToObject(filePath);

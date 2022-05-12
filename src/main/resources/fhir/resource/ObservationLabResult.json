@@ -3,7 +3,7 @@
   "id" : "krcore-observation-labresult-example-01",
   "meta" : {
     "profile" : [
-      "https://example.org/fhir/krcore/StructureDefinition/krcore-observation-labresult"
+      "https://simplifier.net/myhw/StructureDefinition/ObservationLab"
     ]
   },
   "text" : {
@@ -16,8 +16,7 @@
       "coding" : [
         {
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
-          "code" : "laboratory",
-          "display" : "Laboratory"
+          "code" : "laboratory"
         }
       ]
     }
@@ -45,15 +44,11 @@
     {
       "low" : {
         "value" : 40.0,
-        "unit" : "mg/dL",
-        "system" : "http://unitsofmeasure.org",
-        "code" : "mg/dL"
+        "unit" : "mg/dL"
       },
       "high" : {
         "value" : 109.0,
-        "unit" : "mg/dL",
-        "system" : "http://unitsofmeasure.org",
-        "code" : "mg/dL"
+        "unit" : "mg/dL"
       }
     }
   ]
