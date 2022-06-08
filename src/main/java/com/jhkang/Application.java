@@ -2,7 +2,7 @@ package com.jhkang;
 
 import com.google.gson.JsonObject;
 import com.jhkang.fhir.util.JsonUtil;
-import com.jhkang.fhir.validation.NpmValidator;
+import com.jhkang.fhir.validation.FhirValidator;
 
 public class Application {
 
@@ -25,10 +25,10 @@ public class Application {
 //        String filePath = Application.class.getClassLoader().getResource("fhir/resource/DocumentReference.json").getPath();
 //        String filePath = Application.class.getClassLoader().getResource("fhir/resource/TestKCD8CodeSystem.json").getPath();
 
-        NpmValidator validator = new NpmValidator();
+        FhirValidator validator = new FhirValidator();
         JsonObject jsonObject = JsonUtil.readFileToObject(filePath);
         String jsonString = JsonUtil.readObjectToString(jsonObject);
 
-        validator.npm(jsonString);
+        validator.validateResourceR4(jsonString);
     }
 }
