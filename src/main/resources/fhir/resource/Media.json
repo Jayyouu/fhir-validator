@@ -23,7 +23,7 @@
         "system" : "http://dicom.nema.org/resources/ontology/DCM",
         "code" : "DX",
         "display" : "Digital Radiography"
-      },
+      }
     ],
     "text" : "Digital Radiography"
   },

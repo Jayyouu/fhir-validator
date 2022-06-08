@@ -34,7 +34,7 @@
     "reference": "PractitionerRole/practitionerrole-example-01"
   },
   "imagingStudy": {
-    "reference": "imagingStudy/imagingStudy-example-01"
+    "reference": "ImagingStudy/imagingStudy-example-01"
   },
   "media": {
     "link": "Media/media-01"

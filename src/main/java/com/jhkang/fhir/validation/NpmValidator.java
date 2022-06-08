@@ -16,14 +16,15 @@ public class NpmValidator {
         FhirContext fhirContext = FhirContext.forR4();
 
         NpmPackageValidationSupport npmPackageSupport = new NpmPackageValidationSupport(fhirContext);
-        npmPackageSupport.loadPackageFromClasspath("classpath:fhir/package/iteyes.myhw.core-1.0.5-beta.tgz");
+        npmPackageSupport.loadPackageFromClasspath("classpath:fhir/package/iteyes.myhw.core-1.0.9.tgz");
 
         ValidationSupportChain validationSupportChain = new ValidationSupportChain(
                 npmPackageSupport,
                 new DefaultProfileValidationSupport(fhirContext),
                 new CommonCodeSystemsTerminologyService(fhirContext),
                 new InMemoryTerminologyServerValidationSupport(fhirContext),
-                new SnapshotGeneratingValidationSupport(fhirContext)
+                new SnapshotGeneratingValidationSupport(fhirContext),
+                new RemoteTerminologyServiceValidationSupport(fhirContext)
         );
         CachingValidationSupport validationSupport = new CachingValidationSupport(validationSupportChain);
 
