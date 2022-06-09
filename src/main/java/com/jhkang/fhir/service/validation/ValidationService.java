@@ -1,18 +1,22 @@
-package com.jhkang.fhir.validation;
+package com.jhkang.fhir.service.validation;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.validation.SingleValidationMessage;
 import ca.uhn.fhir.validation.ValidationResult;
-import com.jhkang.fhir.validation.support.NpmSupporter;
+import com.jhkang.fhir.common.NpmSupporter;
+import lombok.AllArgsConstructor;
 import org.hl7.fhir.common.hapi.validation.support.CachingValidationSupport;
 import org.hl7.fhir.common.hapi.validation.support.ValidationSupportChain;
 import org.hl7.fhir.common.hapi.validation.validator.FhirInstanceValidator;
 import org.hl7.fhir.instance.model.api.IBaseResource;
+import org.springframework.stereotype.Service;
 
-public class FhirValidator {
+@Service
+@AllArgsConstructor
+public class ValidationService {
 
-    public void validateResourceR4(String resourceR4) throws Exception {
+    public void validateResource(String resourceR4) throws Exception {
 
         // TODO 공통화 필요
         FhirContext fhirContext = FhirContext.forR4();

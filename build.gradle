@@ -9,12 +9,20 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     // id 'application'
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
 
 group = 'com.jhkang'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+
+//configurations {
+//    compileOnly {
+//        extendsFrom annotationProcessor
+//    }
+//}
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -23,27 +31,31 @@ repositories {
 
 dependencies {
     // This dependency is used by the application.
-    implementation 'com.google.guava:guava:30.1.1-jre'
+    // implementation 'com.google.guava:guava:30.1.1-jre'
+    // implementation 'org.slf4j:slf4j-simple:1.7.36'
+    implementation 'org.projectlombok:lombok:1.18.24'
 
-    implementation 'org.slf4j:slf4j-simple:1.7.36'
-//    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    // spring
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    // hapi fhir
     implementation 'ca.uhn.hapi.fhir:hapi-fhir-base:5.7.2'
     implementation 'ca.uhn.hapi.fhir:hapi-fhir-client:5.7.2'
     implementation 'ca.uhn.hapi.fhir:hapi-fhir-structures-r4:5.7.2'
     implementation 'ca.uhn.hapi.fhir:hapi-fhir-validation:5.7.2'
     implementation 'ca.uhn.hapi.fhir:hapi-fhir-validation-resources-r4:5.7.2'
 
+    // util
     implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
     // Use JUnit Jupiter for testing.
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
-
-//application {
-//    // Define the main class for the application.
-//    mainClass = 'com.jhkang.App'
-//}
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
