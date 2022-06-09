@@ -2,7 +2,6 @@ package com.jhkang.fhir.validation.support;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.context.support.DefaultProfileValidationSupport;
-import ca.uhn.fhir.context.support.IValidationSupport;
 import org.hl7.fhir.common.hapi.validation.support.*;
 
 public class NpmSupporter {
@@ -17,8 +16,7 @@ public class NpmSupporter {
                 new DefaultProfileValidationSupport(fhirContext),
                 new CommonCodeSystemsTerminologyService(fhirContext),
                 new InMemoryTerminologyServerValidationSupport(fhirContext),
-                new SnapshotGeneratingValidationSupport(fhirContext),
-                new RemoteTerminologyServiceValidationSupport(fhirContext)
+                new SnapshotGeneratingValidationSupport(fhirContext)
         );
     }
 }
