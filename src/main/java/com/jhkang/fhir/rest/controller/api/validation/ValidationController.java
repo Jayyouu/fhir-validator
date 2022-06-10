@@ -1,5 +1,8 @@
 package com.jhkang.fhir.rest.controller.api.validation;
 
+import ca.uhn.fhir.context.FhirContext;
+import com.jhkang.fhir.ApplicationProperties;
+import com.jhkang.fhir.rest.controller.BaseController;
 import com.jhkang.fhir.service.validation.ValidationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,17 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/validate")
 @RestController
 @Slf4j
-public class ValidationController {
+public class ValidationController extends BaseController {
 
     private final ValidationService validationService;
+    private final ApplicationProperties applicationProperties;
 
     @PostMapping
     public String validateResource(
             @RequestBody String resource) throws Exception {
+        FhirContext fhirContext = getFhirContext();
 
-        log.info(resource);
-        validationService.validateResource(resource);
-
-        return "a";
+        validationService.validateResource(fhirContext, resource, applicationProperties.getProfile().getVersion());
+        return "success";
     }
 }
