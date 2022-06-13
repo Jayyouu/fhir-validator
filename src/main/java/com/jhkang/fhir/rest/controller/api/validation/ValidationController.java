@@ -3,9 +3,11 @@ package com.jhkang.fhir.rest.controller.api.validation;
 import ca.uhn.fhir.context.FhirContext;
 import com.jhkang.fhir.ApplicationProperties;
 import com.jhkang.fhir.rest.controller.BaseController;
+import com.jhkang.fhir.rest.dto.response.Response;
 import com.jhkang.fhir.service.validation.ValidationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,11 +23,10 @@ public class ValidationController extends BaseController {
     private final ApplicationProperties applicationProperties;
 
     @PostMapping
-    public String validateResource(
+    public ResponseEntity<Response> validateResource(
             @RequestBody String resource) throws Exception {
         FhirContext fhirContext = getFhirContext();
 
-        validationService.validateResource(fhirContext, resource, applicationProperties.getProfile().getVersion());
-        return "success";
+        return response(validationService.validateResource(fhirContext, resource, applicationProperties.getProfile().getVersion()));
     }
 }
