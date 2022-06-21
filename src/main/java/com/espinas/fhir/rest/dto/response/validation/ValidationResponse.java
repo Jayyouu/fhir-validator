@@ -1,4 +1,4 @@
-package com.jhkang.fhir.rest.dto.response.validation;
+package com.espinas.fhir.rest.dto.response.validation;
 
 import ca.uhn.fhir.validation.ResultSeverityEnum;
 import ca.uhn.fhir.validation.SingleValidationMessage;

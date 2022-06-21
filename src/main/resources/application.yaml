@@ -8,7 +8,7 @@ spring:
 
 fhir:
   profile:
-    version: 1.1.2-beta
+    version: 1.1.4-beta
 
 ---
 

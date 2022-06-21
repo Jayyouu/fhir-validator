@@ -1,4 +1,4 @@
-package com.jhkang.fhir;
+package com.espinas.fhir;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

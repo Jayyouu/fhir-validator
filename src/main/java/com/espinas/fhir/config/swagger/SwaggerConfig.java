@@ -1,4 +1,4 @@
-package com.jhkang.fhir.config.swagger;
+package com.espinas.fhir.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

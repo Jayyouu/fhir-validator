@@ -1,4 +1,4 @@
-package com.jhkang.fhir.rest.dto.response;
+package com.espinas.fhir.rest.dto.response;
 
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;

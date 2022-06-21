@@ -1,4 +1,4 @@
-package com.jhkang.fhir.util;
+package com.espinas.fhir.common.util;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
