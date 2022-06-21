@@ -1,10 +1,10 @@
-package com.jhkang.fhir.service.validation;
+package com.espinas.fhir.service.validation;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.context.support.DefaultProfileValidationSupport;
 import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.validation.ValidationResult;
-import com.jhkang.fhir.rest.dto.response.validation.ValidationResponse;
+import com.espinas.fhir.rest.dto.response.validation.ValidationResponse;
 import lombok.AllArgsConstructor;
 import org.hl7.fhir.common.hapi.validation.support.*;
 import org.hl7.fhir.common.hapi.validation.validator.FhirInstanceValidator;

@@ -1,10 +1,10 @@
-package com.jhkang.fhir.rest.controller.api.validation;
+package com.espinas.fhir.rest.controller.api.validation;
 
 import ca.uhn.fhir.context.FhirContext;
-import com.jhkang.fhir.ApplicationProperties;
-import com.jhkang.fhir.rest.controller.BaseController;
-import com.jhkang.fhir.rest.dto.response.Response;
-import com.jhkang.fhir.service.validation.ValidationService;
+import com.espinas.fhir.ApplicationProperties;
+import com.espinas.fhir.rest.controller.BaseController;
+import com.espinas.fhir.rest.dto.response.Response;
+import com.espinas.fhir.service.validation.ValidationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

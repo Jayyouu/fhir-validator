@@ -1,6 +1,6 @@
-package com.jhkang.fhir.rest;
+package com.espinas.fhir.rest;
 
-import com.jhkang.fhir.rest.dto.response.Response;
+import com.espinas.fhir.rest.dto.response.Response;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
