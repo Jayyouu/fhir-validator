@@ -1,6 +1,6 @@
 package com.espinas.fhir.domain.validation.repository;
 
-import com.espinas.fhir.domain.validation.entity.Validation;
+import com.espinas.fhir.domain.validation.collection.Validation;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
