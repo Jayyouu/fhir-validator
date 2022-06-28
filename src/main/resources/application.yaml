@@ -5,6 +5,14 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  data:
+    mongodb:
+      database: test
+      port: 27017
+      uri: mongodb://localhost:27017/test
+  mongodb:
+    embedded:
+      version: 4.0.2
 
 fhir:
   profile:
