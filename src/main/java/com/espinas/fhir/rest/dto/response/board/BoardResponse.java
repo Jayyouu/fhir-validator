@@ -18,7 +18,6 @@ public class BoardResponse {
         this.contents = contents;
         this.writer = writer;
     }
-
 }
 
 

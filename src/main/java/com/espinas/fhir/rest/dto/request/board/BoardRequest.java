@@ -6,17 +6,16 @@ import lombok.Getter;
 
 @Getter
 public class BoardRequest {
-    private int boardId;
+    private Long boardId;
     private String title;
     private String contents;
     private String writer;
 
     @Builder
-    public BoardRequest(int boardId, String title, String contents, String writer) {
+    public BoardRequest(Long boardId, String title, String contents, String writer) {
         this.boardId = boardId;
         this.title = title;
         this.contents = contents;
         this.writer = writer;
     }
-
 }

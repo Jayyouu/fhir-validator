@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BoardController {
-    @GetMapping("/boardResponse")
+    @GetMapping("/board")
     public BoardResponse boardResponse() {
         return BoardResponse.builder()
                 .boardId(1L)
