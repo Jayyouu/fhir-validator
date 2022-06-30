@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/board")
 public class BoardController {
-    @GetMapping("/get")
-    public BoardResponse boardResponse() {
+    @GetMapping("/board")
+    public BoardResponse roadboard() {
         return BoardResponse.builder()
                 .boardId(1L)
                 .title("title")
@@ -19,23 +18,20 @@ public class BoardController {
                 .build();
     }
 
-    @PostMapping("/post")
-    public BoardRequest boardRequest(@Valid @RequestBody BoardRequest boardRequest) {
+    @PostMapping("/board")
+    public BoardRequest createboard(@Valid @RequestBody BoardRequest boardRequest) {
         return boardRequest;
     }
 
-    @PutMapping("/put")
-    public BoardRequest brq(@Valid @RequestBody BoardRequest brq) {
-        return brq;
+    @PutMapping("/board")
+    public BoardRequest putboard(@Valid @RequestBody BoardRequest boardRequest) {
+        return boardRequest;
     }
 
-    @DeleteMapping("/delete")
-    public BoardRequest boardRequest() {
+    @DeleteMapping("/board/{boardId}")
+    public BoardRequest deleteboard(@PathVariable Long boardId) {
         return BoardRequest.builder()
-                .boardId(2L)
-                .title("2222")
-                .contents("aaa")
-                .writer("ee")
+                .boardId(boardId)
                 .build();
     }
 }

@@ -14,12 +14,10 @@ public class BoardRequest {
     @NotNull
     private Long boardId;
     @NotBlank
-    @NotEmpty
     private String title;
-    @NotNull
     @NotEmpty
     private String contents;
-    @NotNull
+    @NotBlank
     private String writer;
 
     @Builder
