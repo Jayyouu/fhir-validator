@@ -1,16 +1,21 @@
 package com.espinas.fhir.rest.dto.request.board;
 
-import com.espinas.fhir.rest.dto.response.board.BoardResponse;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import javax.validation.constraints.NotNull;
 
 @Getter
+@NoArgsConstructor
 public class BoardRequest {
+    @NotNull
     private Long boardId;
+    @NotNull
     private String title;
+    @NotNull
     private String contents;
+    @NotNull
     private String writer;
-
     @Builder
     public BoardRequest(Long boardId, String title, String contents, String writer) {
         this.boardId = boardId;

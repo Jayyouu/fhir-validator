@@ -1,6 +1,5 @@
 package com.espinas.fhir.rest.dto.response.board;
 
-
 import lombok.Builder;
 import lombok.Getter;
 
