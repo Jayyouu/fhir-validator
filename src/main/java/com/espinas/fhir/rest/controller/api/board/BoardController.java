@@ -1,9 +1,9 @@
 package com.espinas.fhir.rest.controller.api.board;
 
+import com.espinas.fhir.rest.dto.request.board.BoardRequest;
 import com.espinas.fhir.rest.dto.response.board.BoardResponse;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
+import javax.validation.Valid;
 @RestController
 public class BoardController {
     @GetMapping("/board")
@@ -15,4 +15,8 @@ public class BoardController {
                 .writer("jj")
                 .build();
     }
-}
+    @PostMapping("/board")
+    public BoardRequest boardRequest(@Valid @RequestBody BoardRequest boardRequest) {
+        return boardRequest;
+    }
+ }
