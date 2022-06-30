@@ -2,6 +2,7 @@ package com.espinas.fhir.rest.dto.response.validation;
 
 import ca.uhn.fhir.validation.ResultSeverityEnum;
 import ca.uhn.fhir.validation.SingleValidationMessage;
+import com.espinas.fhir.domain.validation.collection.Validation;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,6 +39,14 @@ public class ValidationResponse {
 //                .mySeverity(singleValidationMessage.getSeverity())
 //                .build();
 //    }
+    public static Validation to(ValidationResponse validationResponse) {
+        return Validation.builder()
+                .data(validationResponse.myMessage)
+                .result("success")
+                .organizationCode("test organization")
+                .status("complete")
+                .build();
+    }
 
     public static List<ValidationResponse> fromList(List<SingleValidationMessage> singleValidationMessages) {
         List<ValidationResponse> validationResponses = new ArrayList<>();

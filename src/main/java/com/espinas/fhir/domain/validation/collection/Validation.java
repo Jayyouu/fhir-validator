@@ -11,11 +11,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Validation extends BaseEntity {
 
-//    @Transient
-//    public static final String SEQUENCE_NAME = "validation_sequence";
+    @Transient
+    public static final String SEQUENCE_NAME = "validation_sequence";
 
-//    @Id
-//    private Long id;
+    @Id
+    private long id;
 
     private String organizationCode;
 
@@ -25,9 +25,9 @@ public class Validation extends BaseEntity {
 
     private String status;
 
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
+    public void setId(long id) {
+        this.id = id;
+    }
 
     @Builder
     public Validation(String organizationCode, String data, String result, String status) {

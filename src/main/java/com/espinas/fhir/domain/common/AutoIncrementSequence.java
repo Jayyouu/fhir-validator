@@ -12,5 +12,5 @@ public class AutoIncrementSequence {
 
     @Id
     private String id;
-    private Long seq;
+    private long seq;
 }
