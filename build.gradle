@@ -9,7 +9,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     // id 'application'
-    id 'org.springframework.boot' version '2.7.0'
+    id 'org.springframework.boot' version '2.6.2'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -18,11 +18,11 @@ group = 'com.jhkang'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
-//configurations {
-//    compileOnly {
-//        extendsFrom annotationProcessor
-//    }
-//}
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -38,7 +38,6 @@ dependencies {
 
     // db
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-    implementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 
     // swagger 3.0
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
@@ -58,7 +57,7 @@ dependencies {
 
     // Use JUnit Jupiter for testing.
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 }
 
 tasks.named('test') {

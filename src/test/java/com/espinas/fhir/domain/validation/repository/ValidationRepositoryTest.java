@@ -1,18 +1,15 @@
 package com.espinas.fhir.domain.validation.repository;
 
 import com.espinas.fhir.domain.validation.collection.Validation;
-import com.espinas.fhir.service.common.SequenceGeneratorService;
+import com.espinas.fhir.support.RepositoryTestSupport;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DataMongoTest
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class ValidationRepositoryTest {
+public class ValidationRepositoryTest extends RepositoryTestSupport {
 
     @Autowired
     private ValidationRepository validationRepository;
@@ -20,8 +17,15 @@ public class ValidationRepositoryTest {
     @BeforeAll
     public void setUp() {
         Validation validation = Validation.builder().data("{\"test title\":\"test contents\"}").build();
-        validationRepository.save(validation);;
+        validationRepository.save(validation);
     }
+
+    @AfterEach
+    void cleanUpDatabase()
+    {
+        this.validationRepository.deleteAll();
+    }
+
 
     @Test
     @DisplayName("getValidation Test")

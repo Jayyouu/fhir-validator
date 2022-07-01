@@ -15,7 +15,7 @@ public class Validation extends BaseEntity {
     public static final String SEQUENCE_NAME = "validation_sequence";
 
     @Id
-    private long id;
+    private String id;
 
     private String organizationCode;
 
@@ -25,7 +25,7 @@ public class Validation extends BaseEntity {
 
     private String status;
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

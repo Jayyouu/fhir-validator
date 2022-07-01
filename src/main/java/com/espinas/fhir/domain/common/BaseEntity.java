@@ -3,9 +3,7 @@ package com.espinas.fhir.domain.common;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -15,10 +13,18 @@ import java.time.LocalDateTime;
 @Document
 public class BaseEntity {
 
+    @CreatedBy
+    private String createBy;
+
     @CreatedDate
     private LocalDateTime createdDate;
+
+    @LastModifiedBy
+    private String modifiedBy;
 
     @LastModifiedDate
     private LocalDateTime LastModifiedDate;
 
+    @Version
+    private Integer version;
 }
