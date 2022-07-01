@@ -10,7 +10,7 @@ import javax.validation.Valid;
 @RequestMapping("/board")
 public class BoardController {
     @GetMapping
-    public BoardResponse loadBoard() {
+    public BoardResponse getBoard() {
         return BoardResponse.builder()
                 .boardId(1L)
                 .title("title")
@@ -20,12 +20,12 @@ public class BoardController {
     }
 
     @PostMapping
-    public BoardRequest createBoard(@Valid @RequestBody BoardRequest boardRequest) {
+    public BoardRequest addBoard(@Valid @RequestBody BoardRequest boardRequest) {
         return boardRequest;
     }
 
     @PutMapping
-    public BoardRequest putBoard(@Valid @RequestBody BoardRequest boardRequest) {
+    public BoardRequest updateBoard(@Valid @RequestBody BoardRequest boardRequest) {
         return boardRequest;
     }
 
