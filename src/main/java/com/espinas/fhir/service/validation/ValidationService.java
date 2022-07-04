@@ -4,8 +4,10 @@ import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.context.support.DefaultProfileValidationSupport;
 import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.validation.ValidationResult;
+import com.espinas.fhir.domain.validation.repository.ValidationRepository;
 import com.espinas.fhir.rest.dto.response.validation.ValidationResponse;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.hl7.fhir.common.hapi.validation.support.*;
 import org.hl7.fhir.common.hapi.validation.validator.FhirInstanceValidator;
 import org.hl7.fhir.instance.model.api.IBaseResource;
@@ -13,9 +15,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 @AllArgsConstructor
+@Service
 public class ValidationService {
+
+    private final ValidationRepository validationRepository;
 
     public List<ValidationResponse> validateResource(FhirContext fhirContext, String resourceR4, String packageVerison) throws Exception {
         IParser parser = fhirContext.newJsonParser().setPrettyPrint(true);
@@ -34,7 +38,10 @@ public class ValidationService {
 //        for (SingleValidationMessage next : result.getMessages()) {
 //            System.out.println(" Next issue " + next.getSeverity() + " - " + next.getLocationString() + " - " + next.getMessage());
 //        }
-        return ValidationResponse.fromList(result.getMessages());
+        List<ValidationResponse> validationResponseList = ValidationResponse.fromList(result.getMessages());
+        validationResponseList.forEach(validationResponse -> validationRepository.save(ValidationResponse.to(validationResponse)));
+
+        return validationResponseList;
     }
 
     // TODO There is no cow level...

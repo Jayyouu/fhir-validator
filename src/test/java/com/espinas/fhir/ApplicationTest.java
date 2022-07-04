@@ -3,15 +3,8 @@
  */
 package com.espinas.fhir;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 class ApplicationTest {
-
-    @Test
-    @DisplayName("app greeting Test")
-    void appHasAGreeting() {
-//        Application classUnderTest = new Application();
-//        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
-    }
 }
