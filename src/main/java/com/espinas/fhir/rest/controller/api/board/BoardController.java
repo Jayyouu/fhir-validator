@@ -10,12 +10,6 @@ import javax.validation.Valid;
 @RequestMapping("/board")
 public class BoardController {
 
-   @GetMapping("/hello")
-   public String hello() {
-       String hello = "Hello";
-       return hello;
-   }
-
     @GetMapping
     public BoardResponse getBoard() {
         return BoardResponse.builder()
