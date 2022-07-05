@@ -9,6 +9,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/board")
 public class BoardController {
+
     @GetMapping
     public BoardResponse getBoard() {
         return BoardResponse.builder()
