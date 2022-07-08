@@ -1,5 +1,6 @@
 package com.espinas.fhir.domain.board.collection;
 
+import com.espinas.fhir.rest.dto.request.board.BoardRequest;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,12 @@ public class Board {
         this.title = title;
         this.contents = contents;
         this.writer = writer;
+    }
+
+    public void update(BoardRequest boardRequest) {
+        this.boardId = boardRequest.getBoardId();
+        this.title = boardRequest.getTitle();
+        this.contents = boardRequest.getContents();
+        this.writer = boardRequest.getWriter();
     }
 }

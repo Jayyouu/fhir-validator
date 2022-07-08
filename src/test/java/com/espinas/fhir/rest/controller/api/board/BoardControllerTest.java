@@ -29,7 +29,7 @@ public class BoardControllerTest {
             "Then : title 값이 제대로 출력 되면 정상 출력될 것을 예상")
     void getBoardTest() throws Exception {
         BoardResponse boardResponse = BoardResponse.builder()
-                .boardId(1L)
+                .boardId("1")
                 .title("title")
                 .contents("geer")
                 .writer("jj")
@@ -41,7 +41,7 @@ public class BoardControllerTest {
     }
 
     BoardRequest boardRequest = BoardRequest.builder()
-            .boardId(2L)
+            .boardId("2")
             .title("aaa")
             .contents("bbb")
             .writer("ccc")
