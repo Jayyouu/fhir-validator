@@ -1,7 +1,10 @@
 package com.espinas.fhir.domain.validation.collection;
 
 import com.espinas.fhir.domain.common.BaseEntity;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;

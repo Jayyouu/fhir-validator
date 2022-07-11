@@ -29,16 +29,6 @@ public class ValidationResponse {
         this.mySeverity = mySeverity;
     }
 
-// DO NOT USE
-//    public static ValidationResponse from(SingleValidationMessage singleValidationMessage) {
-//        return ValidationResponse.builder()
-//                .myLocationCol(singleValidationMessage.getLocationCol())
-//                .myLocationLine(singleValidationMessage.getLocationLine())
-//                .myLocationString(singleValidationMessage.getLocationString())
-//                .myMessage(singleValidationMessage.getMessage())
-//                .mySeverity(singleValidationMessage.getSeverity())
-//                .build();
-//    }
     public static Validation to(ValidationResponse validationResponse) {
         return Validation.builder()
                 .data(validationResponse.myMessage)
