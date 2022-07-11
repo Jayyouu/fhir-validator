@@ -6,7 +6,6 @@ import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
-@EnableMongoRepositories(basePackages = {"com.espinas.fhir.*"})
 @EnableMongoAuditing
 public class MongoConfiguration extends AbstractMongoClientConfiguration {
 
