@@ -15,17 +15,16 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/board")
 public class BoardController {
-
     private final BoardService boardService;
 
     @GetMapping
-    public List<BoardResponse> getBoard() {
-        List<Board> boardList = boardService.getBoard();
+    public List<BoardResponse> getBoardAll() {
+        List<Board> boardList = boardService.getBoardAll();
         List<BoardResponse> boardResponsesList = new ArrayList<>();
         for (Board board : boardList) {
-            BoardResponse boardResponse = BoardResponse.from(board);
-            boardResponsesList.add(boardResponse);
-        }
+        BoardResponse boardResponse = BoardResponse.from(board);
+           boardResponsesList.add(boardResponse);
+       }
         return boardResponsesList;
     }
 

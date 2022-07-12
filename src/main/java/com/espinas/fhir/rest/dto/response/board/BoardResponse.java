@@ -27,6 +27,15 @@ public class BoardResponse {
                 .writer(board.getWriter())
                 .build();
     }
+
+    public static <List> BoardResponse fromList(Board board) {
+        return BoardResponse.builder()
+                .boardId(board.getBoardId())
+                .title(board.getTitle())
+                .contents(board.getContents())
+                .writer(board.getWriter())
+                .build();
+    }
 }
 
 

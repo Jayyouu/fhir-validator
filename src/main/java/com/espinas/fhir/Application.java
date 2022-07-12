@@ -6,6 +6,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @EnableConfigurationProperties(value = {ApplicationProperties.class})
+@EnableMongoRepositories
 @SpringBootApplication
 public class Application {
     public static void main(String[] args) {

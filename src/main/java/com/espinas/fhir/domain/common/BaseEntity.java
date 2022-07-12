@@ -13,18 +13,10 @@ import java.time.LocalDateTime;
 @Document
 public class BaseEntity {
 
-    @CreatedBy
-    private String createBy;
-
     @CreatedDate
     private LocalDateTime createdDate;
-
-    @LastModifiedBy
-    private String modifiedBy;
 
     @LastModifiedDate
     private LocalDateTime LastModifiedDate;
 
-    @Version
-    private Integer version;
 }

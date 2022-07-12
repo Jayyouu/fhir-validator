@@ -29,7 +29,7 @@ public class BoardRequest {
         this.writer = writer;
     }
 
-    public static Board form(BoardRequest boardRequest) {
+    public static Board from(BoardRequest boardRequest) {
         return Board.builder()
                 .boardId(boardRequest.getBoardId())
                 .title(boardRequest.getTitle())

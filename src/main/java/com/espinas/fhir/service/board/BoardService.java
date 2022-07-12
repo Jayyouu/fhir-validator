@@ -14,18 +14,26 @@ public class BoardService {
 
     private final BoardRepository boardRepository;
 
-    public List<Board> getBoard() {
+    public List<Board> getBoardAll() {
         return boardRepository.findAll();
     }
 
+    public Board getBoardOne(BoardRequest boardRequest) {
+        Board board = boardRepository.findById(boardRequest.getBoardId()).orElseThrow(
+                () -> new RuntimeException()
+        );
+        return board;
+    }
+
     public Board addBoard(BoardRequest boardRequest) {
-        Board board = BoardRequest.form(boardRequest);
+        Board board = BoardRequest.from(boardRequest);
         return boardRepository.save(board);
     }
 
     public Board updateBoard(BoardRequest boardRequest) {
-        Board board = boardRepository.findById(boardRequest.getBoardId()).orElseThrow(
-                () -> new RuntimeException());
+        Board board = getBoardOne(boardRequest);
+        // boardRepository.findById(boardRequest.getBoardId()).orElseThrow(
+        // () -> new RuntimeException());
         board.update(boardRequest);
         boardRepository.save(board);
         return board;
