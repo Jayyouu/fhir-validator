@@ -27,9 +27,9 @@ public class ValidationService {
 
         ValidationSupportChain validationSupportChain = createNpmValidationSupportChain(fhirContext, packageVerison);
         CachingValidationSupport validationSupport = new CachingValidationSupport(validationSupportChain);
+        FhirInstanceValidator instanceValidator = new FhirInstanceValidator(validationSupport);
 
         ca.uhn.fhir.validation.FhirValidator validator = fhirContext.newValidator();
-        FhirInstanceValidator instanceValidator = new FhirInstanceValidator(validationSupport);
         validator.registerValidatorModule(instanceValidator);
         ValidationResult result = validator.validateWithResult(serialized);
 
