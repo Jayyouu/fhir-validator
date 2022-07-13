@@ -1,18 +1,18 @@
 package com.espinas.fhir.service.validation;
 
-import ca.uhn.fhir.context.FhirContext;
-import ca.uhn.fhir.context.support.DefaultProfileValidationSupport;
 import ca.uhn.fhir.parser.IParser;
+import ca.uhn.fhir.validation.FhirValidator;
 import ca.uhn.fhir.validation.ValidationResult;
 import com.espinas.fhir.domain.validation.repository.ValidationRepository;
 import com.espinas.fhir.rest.dto.response.validation.ValidationResponse;
 import lombok.AllArgsConstructor;
-import org.hl7.fhir.common.hapi.validation.support.*;
-import org.hl7.fhir.common.hapi.validation.validator.FhirInstanceValidator;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+import static com.espinas.fhir.FhirConfig.getFhirValidator;
+import static com.espinas.fhir.FhirConfig.getIParser;
 
 @AllArgsConstructor
 @Service
@@ -20,42 +20,26 @@ public class ValidationService {
 
     private final ValidationRepository validationRepository;
 
-    public List<ValidationResponse> validateResource(FhirContext fhirContext, String resourceR4, String packageVerison) throws Exception {
-        IParser parser = fhirContext.newJsonParser().setPrettyPrint(true);
+    public List<ValidationResponse> validateResource(String resourceR4, String packageVersion) throws Exception {
+        FhirValidator fhirValidator = getFhirValidator(packageVersion);
+
+        // TODO
+        IParser parser = getIParser();
         IBaseResource resource = parser.parseResource(resourceR4);
         String serialized = parser.encodeResourceToString(resource);
 
-        ValidationSupportChain validationSupportChain = createNpmValidationSupportChain(fhirContext, packageVerison);
-        CachingValidationSupport validationSupport = new CachingValidationSupport(validationSupportChain);
-        FhirInstanceValidator instanceValidator = new FhirInstanceValidator(validationSupport);
+        ValidationResult result = fhirValidator.validateWithResult(serialized);
 
-        ca.uhn.fhir.validation.FhirValidator validator = fhirContext.newValidator();
-        validator.registerValidatorModule(instanceValidator);
-        ValidationResult result = validator.validateWithResult(serialized);
-
+//        // DO NOT DELETE
 //        // for log
 //        for (SingleValidationMessage next : result.getMessages()) {
 //            System.out.println(" Next issue " + next.getSeverity() + " - " + next.getLocationString() + " - " + next.getMessage());
 //        }
 
+        // FIXME
         List<ValidationResponse> validationResponseList = ValidationResponse.fromList(result.getMessages());
         validationResponseList.forEach(validationResponse -> validationRepository.save(ValidationResponse.to(validationResponse)));
 
         return validationResponseList;
-    }
-
-    // TODO There is no cow level...
-    public ValidationSupportChain createNpmValidationSupportChain(FhirContext fhirContext, String packageVersion) throws Exception {
-
-        NpmPackageValidationSupport npmPackageSupport = new NpmPackageValidationSupport(fhirContext);
-        npmPackageSupport.loadPackageFromClasspath("classpath:fhir/package/iteyes.myhw.core-" + packageVersion + ".tgz");
-
-        return new ValidationSupportChain(
-                npmPackageSupport,
-                new DefaultProfileValidationSupport(fhirContext),
-                new CommonCodeSystemsTerminologyService(fhirContext),
-                new InMemoryTerminologyServerValidationSupport(fhirContext),
-                new SnapshotGeneratingValidationSupport(fhirContext)
-        );
     }
 }

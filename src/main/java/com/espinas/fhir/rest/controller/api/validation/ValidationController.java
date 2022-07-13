@@ -1,6 +1,5 @@
 package com.espinas.fhir.rest.controller.api.validation;
 
-import ca.uhn.fhir.context.FhirContext;
 import com.espinas.fhir.ApplicationProperties;
 import com.espinas.fhir.rest.controller.BaseController;
 import com.espinas.fhir.rest.dto.response.Response;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import static com.espinas.fhir.FhirConfig.getFhirContext;
 
 @AllArgsConstructor
 @RequestMapping("/validate")
@@ -28,6 +25,6 @@ public class ValidationController extends BaseController {
     public ResponseEntity<Response> validateResource(
             @RequestBody String resource) throws Exception {
 
-        return response(validationService.validateResource(getFhirContext(), resource, applicationProperties.getProfile().getVersion()));
+        return response(validationService.validateResource(resource, applicationProperties.getProfile().getVersion()));
     }
 }
