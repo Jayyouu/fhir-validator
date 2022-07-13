@@ -21,8 +21,7 @@ public class ValidationRepositoryTest extends RepositoryTestSupport {
     }
 
     @AfterEach
-    void cleanUpDatabase()
-    {
+    void cleanUpDatabase() {
         this.validationRepository.deleteAll();
     }
 
