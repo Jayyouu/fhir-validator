@@ -9,14 +9,17 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
+import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -89,76 +92,70 @@ public class BoardControllerTest {
     void getBoardTest() throws Exception {
         Board board = createOneBoard();
 
-//        when(boardService.getBoard(any())).thenReturn(board);
+        when(boardService.getBoard(any())).thenReturn(board);
 
-//        mockMvc.perform(get("/board/1"))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("boardId").value(board.getBoardId()))
-//                .andExpect(jsonPath("title").value(board.getTitle()))
-//                .andExpect(jsonPath("contents").value(board.getContents()))
-//                .andExpect(jsonPath("writer").value(board.getWriter()));
+        mockMvc.perform(get("/board/1"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("boardId").value(board.getBoardId()))
+                .andExpect(jsonPath("title").value(board.getTitle()))
+                .andExpect(jsonPath("contents").value(board.getContents()))
+                .andExpect(jsonPath("writer").value(board.getWriter()));
     }
 
-//    @Test
-//    @DisplayName("Given : boardList에 값(데이터)들이 주어졌을 때" +
-//            "When : " +
-//            "Then : ")
-//    void getBoardListTest() throws Exception {
-//        List<Board> boardList = creatSeveralBoard();
-//
-//        when(boardService.getBoardList()).thenReturn(boardList);
-//
-//        mockMvc.perform(get("board"))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$.*", hasSize(5)));
-//
-////        when(boardService.getBoardList(any())).thenReturn(boardList);
-//
-///*        mockMvc.perform(get("/board"))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath())*/
-//    }
-//
-//    @Test
-//    @DisplayName("Given : boardRequest 객체에 값(데이터) 주어졌을 때 " +
-//            "When : postMapping된 board url 호출하고, 데이터를 json 형식으로 보내면 " +
-//            "Then : 입력한 값들이 정상 출력될 것을 예상")
-//    void addBoardTest() throws Exception {
-//        Board board = createOneBoard();
-//
-//        when(boardService.addBoard(any())).thenReturn(board);
-//
-//        ResultActions resultActions =
-//                mockMvc.perform(post("/board")
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(objectMapper.writeValueAsString(board))
-//                );
-//        resultActions.andExpect(status().isOk())
-//                .andExpect(jsonPath("boardId").value(board.getBoardId()))
-//                .andExpect(jsonPath("title").value(board.getTitle()))
-//                .andExpect(jsonPath("contents").value(board.getContents()))
-//                .andExpect(jsonPath("writer").value(board.getWriter()));
-//    }
-//
-//    @Test
-//    @DisplayName("Given : boardRequest 객체에 값(데이터)이 주어졌을 때 " +
-//            "When : putMapping된 board url 호출하고, 데이터를 json 형식으로 보내면 " +
-//            "Then : board 객체에서 입력된 값(데이터)을 정상 출력될 것을 예상")
-//    void updateBoardTest() throws Exception {
-//        BoardRequest boardRequest = createOneUpdateBoardRequest();
-//        Board board = createOneUpdateBoard();
-//
-//        when(boardService.updateBoard(any())).thenReturn(board);
-//
-//        ResultActions resultActions =
-//                mockMvc.perform(put("/board")
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(objectMapper.writeValueAsString(boardRequest))
-//                );
-//        resultActions.andExpect(status().isOk())
-//                .andExpect(jsonPath("boardId").value(boardRequest.getBoardId()))
-//                .andExpect(jsonPath("title").value(boardRequest.getTitle()))
-//                .andExpect(jsonPath("contents").value(boardRequest.getContents()))
-//                .andExpect(jsonPath("writer").value(boardRequest.getWriter()));
-//    }
+    @Test
+    @DisplayName("Given : boardList에 값(데이터)들이 주어졌을 때" +
+            "When : " +
+            "Then : ")
+    void getBoardListTest() throws Exception {
+        List<Board> boardList = creatSeveralBoard();
+
+        when(boardService.getBoardList()).thenReturn(boardList);
+
+        mockMvc.perform(get("/board"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.*", hasSize(3)));
+    }
+
+    @Test
+    @DisplayName("Given : boardRequest 객체에 값(데이터) 주어졌을 때 " +
+            "When : postMapping된 board url 호출하고, 데이터를 json 형식으로 보내면 " +
+            "Then : 입력한 값들이 정상 출력될 것을 예상")
+    void addBoardTest() throws Exception {
+        Board board = createOneBoard();
+
+        when(boardService.addBoard(any())).thenReturn(board);
+
+        ResultActions resultActions =
+                mockMvc.perform(post("/board")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(board))
+                );
+        resultActions.andExpect(status().isOk())
+                .andExpect(jsonPath("boardId").value(board.getBoardId()))
+                .andExpect(jsonPath("title").value(board.getTitle()))
+                .andExpect(jsonPath("contents").value(board.getContents()))
+                .andExpect(jsonPath("writer").value(board.getWriter()));
+    }
+
+    @Test
+    @DisplayName("Given : boardRequest 객체에 값(데이터)이 주어졌을 때 " +
+            "When : putMapping된 board url 호출하고, 데이터를 json 형식으로 보내면 " +
+            "Then : board 객체에서 입력된 값(데이터)을 정상 출력될 것을 예상")
+    void updateBoardTest() throws Exception {
+        BoardRequest boardRequest = createOneUpdateBoardRequest();
+        Board board = createOneUpdateBoard();
+
+        when(boardService.updateBoard(any())).thenReturn(board);
+
+        ResultActions resultActions =
+                mockMvc.perform(put("/board")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(boardRequest))
+                );
+        resultActions.andExpect(status().isOk())
+                .andExpect(jsonPath("boardId").value(board.getBoardId()))
+                .andExpect(jsonPath("title").value(board.getTitle()))
+                .andExpect(jsonPath("contents").value(board.getContents()))
+                .andExpect(jsonPath("writer").value(board.getWriter()));
+    }
 }
