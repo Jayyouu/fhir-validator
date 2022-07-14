@@ -13,6 +13,9 @@ on:
       - 'feat/*'
       - 'feature/*'
       - 'main'
+  pull_request:
+    branches:
+      - 'main'
 
 permissions:
   contents: read
