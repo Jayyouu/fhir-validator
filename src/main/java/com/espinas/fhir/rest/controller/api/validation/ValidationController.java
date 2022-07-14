@@ -1,6 +1,5 @@
 package com.espinas.fhir.rest.controller.api.validation;
 
-import ca.uhn.fhir.context.FhirContext;
 import com.espinas.fhir.ApplicationProperties;
 import com.espinas.fhir.rest.controller.BaseController;
 import com.espinas.fhir.rest.dto.response.Response;
@@ -25,9 +24,7 @@ public class ValidationController extends BaseController {
     @PostMapping
     public ResponseEntity<Response> validateResource(
             @RequestBody String resource) throws Exception {
-        // FIXME
-        FhirContext fhirContext = getFhirContext();
 
-        return response(validationService.validateResource(fhirContext, resource, applicationProperties.getProfile().getVersion()));
+        return response(validationService.validateResource(resource, applicationProperties.getProfile().getVersion()));
     }
 }

@@ -2,7 +2,6 @@ package com.espinas.fhir.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -11,7 +10,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
-//@EnableWebMvc
 public class SwaggerConfig {
 
     @Bean
@@ -27,9 +25,9 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Fhir Validation API")
-                .description("validate fhir resources version R4")
-                .version("0.1")
+                .title("Fhir Validation API Server")
+                .description("Validate fhir resources with simplifier profiles")
+                .version("0.0.1")
                 .build();
     }
 }
