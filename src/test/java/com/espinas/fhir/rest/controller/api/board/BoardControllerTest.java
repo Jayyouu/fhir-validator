@@ -81,7 +81,6 @@ public class BoardControllerTest {
                 .contents("cccc")
                 .writer("cccc")
                 .build();
-
         return asList(board1, board2, board3);
     }
 
