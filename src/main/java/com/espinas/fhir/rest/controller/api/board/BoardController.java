@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -17,15 +16,18 @@ import java.util.List;
 public class BoardController {
     private final BoardService boardService;
 
-    @GetMapping
-    public List<BoardResponse> getBoardAll() {
-        List<Board> boardList = boardService.getBoardAll();
-        List<BoardResponse> boardResponsesList = new ArrayList<>();
-        for (Board board : boardList) {
+    @GetMapping("{boardId}")
+    public BoardResponse getBoard(@PathVariable String boardId) {
+        Board board = boardService.getBoard(boardId);
         BoardResponse boardResponse = BoardResponse.from(board);
-           boardResponsesList.add(boardResponse);
-       }
-        return boardResponsesList;
+        return boardResponse;
+    }
+
+    @GetMapping
+    public List<BoardResponse> getBoardList() {
+        List<Board> boardList = boardService.getBoardList();
+        List<BoardResponse> boardResponseList = BoardResponse.fromList(boardList);
+        return boardResponseList;
     }
 
     @PostMapping

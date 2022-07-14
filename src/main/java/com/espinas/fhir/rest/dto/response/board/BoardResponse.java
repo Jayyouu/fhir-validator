@@ -4,6 +4,9 @@ import com.espinas.fhir.domain.board.collection.Board;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 public class BoardResponse {
     private String boardId;
@@ -28,13 +31,18 @@ public class BoardResponse {
                 .build();
     }
 
-    public static <List> BoardResponse fromList(Board board) {
-        return BoardResponse.builder()
-                .boardId(board.getBoardId())
-                .title(board.getTitle())
-                .contents(board.getContents())
-                .writer(board.getWriter())
-                .build();
+    public static List<BoardResponse> fromList(List<Board> boardList) {
+        List<BoardResponse> boardResponseList = new ArrayList<>();
+
+        boardList.forEach(board -> boardResponseList.add(
+                BoardResponse.builder()
+                        .boardId(board.getBoardId())
+                        .title(board.getTitle())
+                        .contents(board.getContents())
+                        .writer(board.getWriter())
+                        .build()
+        ));
+        return boardResponseList;
     }
 }
 
