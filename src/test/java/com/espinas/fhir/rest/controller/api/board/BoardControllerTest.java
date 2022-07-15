@@ -35,7 +35,7 @@
 //
 //    private BoardRequest createOneUpdateBoardRequest() {
 //        return BoardRequest.builder()
-//                .boardId("4")
+//                .id("4")
 //                .title("ddd")
 //                .contents("ddddd")
 //                .writer("ddddd")
@@ -44,7 +44,6 @@
 //
 //    private Board createOneUpdateBoard() {
 //        return Board.builder()
-//                .boardId("1")
 //                .title("aaa")
 //                .contents("aaaa")
 //                .writer("aaaa")
@@ -53,7 +52,6 @@
 //
 //    private Board createOneBoard() {
 //        return Board.builder()
-//                .boardId("1")
 //                .title("aaaa")
 //                .contents("aaaa")
 //                .writer("aaaa")
@@ -62,21 +60,18 @@
 //
 //    private List<Board> creatSeveralBoard() {
 //        Board board1 = Board.builder()
-//                .boardId("1")
 //                .title("aaa")
 //                .contents("aaaa")
 //                .writer("aaaa")
 //                .build();
 //
 //        Board board2 = Board.builder()
-//                .boardId("2")
 //                .title("bbb")
 //                .contents("bbbb")
 //                .writer("bbbb")
 //                .build();
 //
 //        Board board3 = Board.builder()
-//                .boardId("3")
 //                .title("ccc")
 //                .contents("cccc")
 //                .writer("cccc")

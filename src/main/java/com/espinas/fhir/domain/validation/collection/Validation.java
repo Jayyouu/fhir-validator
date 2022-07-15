@@ -14,9 +14,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Validation extends BaseEntity {
 
-    @Transient
-    public static final String SEQUENCE_NAME = "validation_sequence";
-
     @Id
     private String id;
 

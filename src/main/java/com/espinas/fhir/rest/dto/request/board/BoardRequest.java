@@ -12,26 +12,25 @@ import javax.validation.constraints.NotNull;
 @Getter
 @NoArgsConstructor
 public class BoardRequest {
-    @NotNull
-    private String boardId;
-    @NotBlank
+
+    private String id;
+
     private String title;
-    @NotEmpty
+
     private String contents;
-    @NotBlank
+
     private String writer;
 
     @Builder
-    public BoardRequest(String boardId, String title, String contents, String writer) {
-        this.boardId = boardId;
+    public BoardRequest(String id, String title, String contents, String writer) {
+        this.id = id;
         this.title = title;
         this.contents = contents;
         this.writer = writer;
     }
 
-    public static Board from(BoardRequest boardRequest) {
+    public static Board to(BoardRequest boardRequest) {
         return Board.builder()
-                .boardId(boardRequest.getBoardId())
                 .title(boardRequest.getTitle())
                 .contents(boardRequest.getContents())
                 .writer(boardRequest.getWriter())
