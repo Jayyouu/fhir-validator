@@ -11,7 +11,6 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class BoardService {
-
     private final BoardRepository boardRepository;
 
     public Board getBoard(String boardId) {

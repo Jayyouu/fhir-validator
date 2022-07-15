@@ -1,53 +1,47 @@
 package com.espinas.fhir.rest.controller.api.board;
 
-import com.espinas.fhir.domain.board.collection.Board;
+import com.espinas.fhir.rest.controller.BaseController;
 import com.espinas.fhir.rest.dto.request.board.BoardRequest;
-import com.espinas.fhir.rest.dto.response.board.BoardResponse;
+import com.espinas.fhir.rest.dto.response.Response;
 import com.espinas.fhir.service.board.BoardService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/board")
-public class BoardController {
+public class BoardController extends BaseController {
     private final BoardService boardService;
 
-    @GetMapping("{boardId}")
-    public BoardResponse getBoard(@PathVariable String boardId) {
-        Board board = boardService.getBoard(boardId);
-        BoardResponse boardResponse = BoardResponse.from(board);
-        return boardResponse;
+    @GetMapping("/{boardId}")
+    public ResponseEntity<Response> getBoard(@PathVariable String boardId) {
+        return response(boardService.getBoard(boardId));
     }
+
 
     @GetMapping
-    public List<BoardResponse> getBoardList() {
-        List<Board> boardList = boardService.getBoardList();
-        List<BoardResponse> boardResponseList = BoardResponse.fromList(boardList);
-        return boardResponseList;
+    public ResponseEntity<Response> getBoardList() {
+        return response(boardService.getBoardList());
     }
+
 
     @PostMapping
-    public BoardResponse addBoard(@Valid @RequestBody BoardRequest boardRequest) {
-        Board board = boardService.addBoard(boardRequest);
-        BoardResponse boardResponse = BoardResponse.from(board);
-        return boardResponse;
+    public ResponseEntity<Response> addBoard(@Valid @RequestBody BoardRequest boardRequest) {
+        return response(boardService.addBoard(boardRequest));
     }
 
+
     @PutMapping
-    public BoardResponse updateBoard(@Valid @RequestBody BoardRequest boardRequest) {
-        Board board = boardService.updateBoard(boardRequest);
-        BoardResponse boardResponse = BoardResponse.from(board);
-        return boardResponse;
+    public ResponseEntity<Response> updateBoard(@Valid @RequestBody BoardRequest boardRequest) {
+        return response(boardService.updateBoard(boardRequest));
     }
 
     @DeleteMapping("/{boardId}")
-    public String deleteBoard(@PathVariable String boardId) {
+    public ResponseEntity<Response> deleteBoard(@PathVariable String boardId) {
         boardService.deleteBoard(boardId);
-        String message = "Delete Success";
-        return message;
+        return response("Delete Success");
     }
 }
