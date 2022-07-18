@@ -1,6 +1,7 @@
 package com.espinas.fhir.rest.dto.response.user;
 
 import com.espinas.fhir.domain.user.collection.User;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserResponse {
     private String id;
     private String name;

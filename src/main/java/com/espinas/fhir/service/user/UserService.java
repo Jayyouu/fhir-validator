@@ -14,8 +14,7 @@ public class UserService {
 
     public UserResponse addUser(UserRequest userRequest) {
         User user = UserRequest.to(userRequest);
-        userRepository.save(user);
-        UserResponse userResponse = UserResponse.from(user);
+        UserResponse userResponse = UserResponse.from(userRepository.save(user));
         return userResponse;
     }
 
@@ -28,8 +27,7 @@ public class UserService {
     public UserResponse updateUser(UserRequest userRequest) {
         User user = userRepository.findById(userRequest.getId()).orElseThrow(() -> new RuntimeException());
         user.update(userRequest);
-        userRepository.save(user);
-        UserResponse userResponse = UserResponse.from(user);
+        UserResponse userResponse = UserResponse.from(userRepository.save(user));
         return userResponse;
     }
 

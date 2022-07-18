@@ -19,25 +19,21 @@ public class UserController extends BaseController {
 
     @PostMapping
     public ResponseEntity<Response> addUser(@Valid @RequestBody UserRequest userRequest) {
-        ResponseEntity<Response> response = response(userService.addUser(userRequest));
-        return response;
+        return response(userService.addUser(userRequest));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Response> getUser(@PathVariable String id) {
-        ResponseEntity<Response> response = response(userService.getUser(id));
-        return response;
+        return response(userService.getUser(id));
     }
 
     @PutMapping
     public ResponseEntity<Response> updateUser(@Valid @RequestBody UserRequest userRequest) {
-        ResponseEntity<Response> response = response(userService.updateUser(userRequest));
-        return response;
+        return response(userService.updateUser(userRequest));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Response> deleteUser(@PathVariable String id) {
-        ResponseEntity<Response> response = response(userService.deleteUser(id));
-        return response;
+        return response(userService.deleteUser(id));
     }
 }

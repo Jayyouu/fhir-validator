@@ -1,6 +1,7 @@
 package com.espinas.fhir.rest.dto.request.user;
 
 import com.espinas.fhir.domain.user.collection.User;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserRequest {
     @NotNull
     private String id;
