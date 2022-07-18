@@ -14,23 +14,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User extends BaseEntity {
 
     @Id
-    private String userId;
-    private String userName;
-    private Long userAge;
-    private String userGender;
+    private String id;
+    private String name;
+    private Long age;
+    private String gender;
 
     @Builder
-    public User(String userId, String userName, Long userAge, String userGender) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userAge = userAge;
-        this.userGender = userGender;
+    public User(String id, String name, Long age, String gender) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
     }
 
-    public void updateUser(UserRequest userRequest) {
-        this.userId = userRequest.getUserId();
-        this.userName = userRequest.getUserName();
-        this.userAge = userRequest.getUserAge();
-        this.userGender = userRequest.getUserGender();
+    public void update(UserRequest userRequest) {
+        this.id = userRequest.getId();
+        this.name = userRequest.getName();
+        this.age = userRequest.getAge();
+        this.gender = userRequest.getGender();
     }
 }

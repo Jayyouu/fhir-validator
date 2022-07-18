@@ -5,28 +5,36 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Getter
 @NoArgsConstructor
 public class UserResponse {
-    private String userId;
-    private String userName;
-    private Long userAge;
-    private String userGender;
+    private String id;
+    private String name;
+    private Long age;
+    private String gender;
+    private LocalDateTime createdDate;
+    private LocalDateTime modifiedDate;
 
     @Builder
-    public UserResponse(String userId, String userName, Long userAge, String userGender) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userAge = userAge;
-        this.userGender = userGender;
+    public UserResponse(String id, String name, Long age, String gender, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.createdDate = createdDate;
+        this.modifiedDate = modifiedDate;
     }
 
     public static UserResponse from(User user) {
         return UserResponse.builder()
-                .userId(user.getUserId())
-                .userName(user.getUserName())
-                .userAge(user.getUserAge())
-                .userGender(user.getUserGender())
+                .id(user.getId())
+                .name(user.getName())
+                .age(user.getAge())
+                .gender(user.getGender())
+                .createdDate(user.getCreatedDate())
+                .modifiedDate(user.getLastModifiedDate())
                 .build();
     }
 }

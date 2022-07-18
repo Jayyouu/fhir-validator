@@ -23,9 +23,9 @@ public class UserController extends BaseController {
         return response;
     }
 
-    @GetMapping("/{userId}")
-    public ResponseEntity<Response> getUser(@PathVariable String userId) {
-        ResponseEntity<Response> response = response(userService.getUser(userId));
+    @GetMapping("/{id}")
+    public ResponseEntity<Response> getUser(@PathVariable String id) {
+        ResponseEntity<Response> response = response(userService.getUser(id));
         return response;
     }
 
@@ -35,10 +35,9 @@ public class UserController extends BaseController {
         return response;
     }
 
-    @DeleteMapping("/{userId}")
-    public ResponseEntity<Response> deleteUser(@PathVariable String userId) {
-        userService.deleteUser(userId);
-        ResponseEntity<Response> response = response("Delete Success");
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Response> deleteUser(@PathVariable String id) {
+        ResponseEntity<Response> response = response(userService.deleteUser(id));
         return response;
     }
 }

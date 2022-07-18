@@ -12,28 +12,28 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class UserRequest {
     @NotNull
-    private String userId;
+    private String id;
     @NotBlank
-    private String userName;
+    private String name;
     @NotNull
-    private Long userAge;
+    private Long age;
     @NotBlank
-    private String userGender;
+    private String gender;
 
     @Builder
-    public UserRequest(String userId, String userName, Long userAge, String userGender) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userAge = userAge;
-        this.userGender = userGender;
+    public UserRequest(String id, String name, Long age, String gender) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
     }
 
-    public static User from(UserRequest userRequest) {
+    public static User to(UserRequest userRequest) {
         return User.builder()
-                .userId(userRequest.getUserId())
-                .userName(userRequest.getUserName())
-                .userAge(userRequest.getUserAge())
-                .userGender(userRequest.getUserGender())
+                .id(userRequest.getId())
+                .name(userRequest.getName())
+                .age(userRequest.getAge())
+                .gender(userRequest.getGender())
                 .build();
     }
 }
