@@ -14,21 +14,18 @@ public class UserService {
 
     public UserResponse addUser(UserRequest userRequest) {
         User user = UserRequest.to(userRequest);
-        UserResponse userResponse = UserResponse.from(userRepository.save(user));
-        return userResponse;
+        return UserResponse.from(userRepository.save(user));
     }
 
     public UserResponse getUser(String id) {
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException());
-        UserResponse userResponse = UserResponse.from(user);
-        return userResponse;
+        return UserResponse.from(user);
     }
 
     public UserResponse updateUser(UserRequest userRequest) {
         User user = userRepository.findById(userRequest.getId()).orElseThrow(() -> new RuntimeException());
         user.update(userRequest);
-        UserResponse userResponse = UserResponse.from(userRepository.save(user));
-        return userResponse;
+        return UserResponse.from(userRepository.save(user));
     }
 
     public String deleteUser(String id) {
