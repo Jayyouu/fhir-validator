@@ -24,7 +24,6 @@ public class ValidationController extends BaseController {
     @PostMapping
     public ResponseEntity<Response> validateResource(
             @RequestBody String resource) throws Exception {
-
         return response(validationService.validateResource(resource, applicationProperties.getProfile().getVersion()));
     }
 }
