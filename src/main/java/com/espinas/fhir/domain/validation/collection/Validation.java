@@ -21,7 +21,7 @@ public class Validation extends BaseEntity {
     private String status;
 
     @Builder
-    public Validation(String id, String organizationCode, String data, String result, String status) {
+    public Validation(String organizationCode, String data, String result, String status) {
         this.organizationCode = organizationCode;
         this.data = data;
         this.result = result;

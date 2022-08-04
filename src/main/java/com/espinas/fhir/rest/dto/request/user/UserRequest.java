@@ -31,7 +31,6 @@ public class UserRequest {
 
     public static User to(UserRequest userRequest) {
         return User.builder()
-                .id(userRequest.getId())
                 .name(userRequest.getName())
                 .age(userRequest.getAge())
                 .gender(userRequest.getGender())
