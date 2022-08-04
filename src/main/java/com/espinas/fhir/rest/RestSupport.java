@@ -36,5 +36,4 @@ public abstract class RestSupport {
                 .contentType(MEDIA_TYPE_APPLICATION_JSON_UTF8)
                 .body(new Response(400, null, "ERROR"));
     }
-
 }

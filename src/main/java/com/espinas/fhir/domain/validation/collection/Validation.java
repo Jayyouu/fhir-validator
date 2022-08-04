@@ -1,6 +1,6 @@
 package com.espinas.fhir.domain.validation.collection;
 
-import com.espinas.fhir.domain.common.BaseEntity;
+import com.espinas.fhir.domain.common.BaseDocument;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Document(collection = "validation")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Validation extends BaseEntity {
+public class Validation extends BaseDocument {
 
     private String organizationCode;
 

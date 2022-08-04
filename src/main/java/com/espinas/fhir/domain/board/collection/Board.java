@@ -1,6 +1,6 @@
 package com.espinas.fhir.domain.board.collection;
 
-import com.espinas.fhir.domain.common.BaseEntity;
+import com.espinas.fhir.domain.common.BaseDocument;
 import com.espinas.fhir.rest.dto.request.board.BoardRequest;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Document(collection = "board")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Board extends BaseEntity {
+public class Board extends BaseDocument {
 
     private String title;
 
