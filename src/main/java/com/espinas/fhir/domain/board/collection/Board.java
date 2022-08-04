@@ -6,7 +6,6 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
@@ -14,18 +13,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Board extends BaseEntity {
 
-    @Id
-    private String id;
-
     private String title;
 
     private String contents;
 
     private String writer;
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     @Builder
     public Board(String title, String contents, String writer) {
@@ -35,7 +27,6 @@ public class Board extends BaseEntity {
     }
 
     public void update(BoardRequest boardRequest) {
-        this.id = boardRequest.getId();
         this.title = boardRequest.getTitle();
         this.contents = boardRequest.getContents();
         this.writer = boardRequest.getWriter();
