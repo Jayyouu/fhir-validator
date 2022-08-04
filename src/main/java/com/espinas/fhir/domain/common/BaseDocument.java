@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Document
-public class BaseEntity {
+public class BaseDocument {
 
     @Transient
     public static final String SEQUENCE_NAME = "base_sequence";

@@ -1,5 +1,6 @@
 package com.espinas.fhir.config.swagger;
 
+import com.espinas.fhir.config.BaseConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -17,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.OAS_30) // 3.0
                 .useDefaultResponseMessages(false)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.jhkang.fhir.rest"))
+                .apis(RequestHandlerSelectors.basePackage(BaseConfiguration.basePackagePath + ".rest"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
