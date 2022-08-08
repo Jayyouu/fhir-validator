@@ -1,4 +1,4 @@
-package com.espinas.fhir.domain.validation.collection;
+package com.espinas.fhir.domain.common;
 
 import lombok.Getter;
 import lombok.Setter;
