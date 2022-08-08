@@ -1,6 +1,5 @@
 package com.espinas.fhir.rest.dto.response;
 
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
 
 import java.time.ZoneId;
@@ -8,7 +7,6 @@ import java.time.ZonedDateTime;
 import java.util.List;
 
 @Data
-@JsonNaming
 public class Response<T> {
     private int code;
     private int count;

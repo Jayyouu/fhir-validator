@@ -1,6 +1,6 @@
 package com.espinas.fhir.service.common;
 
-import com.espinas.fhir.domain.validation.collection.DatabaseSequence;
+import com.espinas.fhir.domain.common.DatabaseSequence;
 import lombok.AllArgsConstructor;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Update;

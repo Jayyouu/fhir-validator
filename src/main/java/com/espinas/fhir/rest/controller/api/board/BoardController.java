@@ -1,4 +1,4 @@
-package com.espinas.fhir.rest.controller.api;
+package com.espinas.fhir.rest.controller.api.board;
 
 import com.espinas.fhir.rest.controller.BaseController;
 import com.espinas.fhir.rest.dto.request.board.BoardRequest;
